@@ -6,8 +6,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.NumberFormat;
-
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 2;
@@ -25,34 +23,38 @@ public class MainActivity extends AppCompatActivity {
      * THis method is called when the order button is clicked
      */
     public void submitOrder(View view) {
-        int price = quantity*5;
-        //displayPrice(quantity*5);
-        //String priceMessage = "The Price is $" + String.valueOf(quantity*5);
-        String priceMessage = price + " dollars for " + quantity + " cups of coffee. Pay up.";
-        priceMessage += " \nThank you!";
+        int price = 5;
+        String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
     }
+
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
 
 
     /**
-     * This method displays the given quantity value of the screen
+     * Create summary of the order
+     * @param price of the order
+     * @return Summary
      */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    private String createOrderSummary(int price) {
+        String priceMessage = "Name: Kaptain Kunal";
+        priceMessage += "\nQuantity: " + quantity;
+        priceMessage += "\nTotal: $" + price*quantity;
+        priceMessage += "\nThank you!";
+        return priceMessage;
     }
+
 
     public void increment(View view) {
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     public void decrement(View view) {
@@ -61,13 +63,11 @@ public class MainActivity extends AppCompatActivity {
             quantity = 0;
         }
 
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView)findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView)findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
-
-
 }
