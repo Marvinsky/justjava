@@ -22,13 +22,13 @@
             android:id="@+id/name_edit_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Put your name"
+            android:hint="@string/put_your_name"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Toppings"
+            android:text="@string/toppings"
             android:textAllCaps="true"
             />
 
@@ -37,7 +37,7 @@
             android:id="@+id/whipped_cream_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Whipped cream"
+            android:text="@string/whipped_cream"
             android:paddingLeft="24dp"
             android:textSize="16sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -47,7 +47,7 @@
             android:id="@+id/chocolate_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chocolate"
+            android:text="@string/chocolate"
             android:paddingLeft="24dp"
             android:textSize="16sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -56,7 +56,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="quantity"
+            android:text="@string/quantity"
             android:layout_marginBottom="16dp"
             android:textAllCaps="true"
             />
@@ -71,7 +71,7 @@
             <Button
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:text="-"
+                android:text="@string/minus_symbol"
                 android:onClick="decrement"
                 android:layout_marginRight="8dp"
                 />
@@ -89,7 +89,7 @@
             <Button
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:text="+"
+                android:text="@string/plus_symbol"
                 android:layout_marginLeft="8dp"
                 android:onClick="increment"
                 />
@@ -100,7 +100,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="order"
+            android:text="@string/order"
             android:layout_marginTop="16dp"
             android:textAllCaps="true"
             android:onClick="submitOrder"
